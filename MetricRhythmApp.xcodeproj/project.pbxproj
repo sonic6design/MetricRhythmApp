@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		152A11F62A4B4206000A9AEA /* MetricRhythmAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A11F52A4B4206000A9AEA /* MetricRhythmAppApp.swift */; };
-		152A11F82A4B4206000A9AEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A11F72A4B4206000A9AEA /* ContentView.swift */; };
 		152A11FA2A4B4207000A9AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152A11F92A4B4207000A9AEA /* Assets.xcassets */; };
 		152A11FD2A4B4207000A9AEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152A11FC2A4B4207000A9AEA /* Preview Assets.xcassets */; };
+		156824802A742178008B4471 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568247F2A742178008B4471 /* MainTabView.swift */; };
+		156824862A742181008B4471 /* PatternButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824812A742181008B4471 /* PatternButtonStyle.swift */; };
+		156824872A742181008B4471 /* PatternButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824822A742181008B4471 /* PatternButtonConfig.swift */; };
+		156824882A742181008B4471 /* MeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824832A742181008B4471 /* MeterView.swift */; };
+		1568248A2A742181008B4471 /* PatternButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824852A742181008B4471 /* PatternButtonView.swift */; };
+		1568248E2A742289008B4471 /* MetricRhythmAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		152A11F22A4B4206000A9AEA /* MetricRhythmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetricRhythmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		152A11F52A4B4206000A9AEA /* MetricRhythmAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricRhythmAppApp.swift; sourceTree = "<group>"; };
-		152A11F72A4B4206000A9AEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		152A11F92A4B4207000A9AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		152A11FC2A4B4207000A9AEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1568247F2A742178008B4471 /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		156824812A742181008B4471 /* PatternButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternButtonStyle.swift; sourceTree = "<group>"; };
+		156824822A742181008B4471 /* PatternButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternButtonConfig.swift; sourceTree = "<group>"; };
+		156824832A742181008B4471 /* MeterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterView.swift; sourceTree = "<group>"; };
+		156824852A742181008B4471 /* PatternButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternButtonView.swift; sourceTree = "<group>"; };
+		1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricRhythmAppApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,12 @@
 		152A11F42A4B4206000A9AEA /* MetricRhythmApp */ = {
 			isa = PBXGroup;
 			children = (
-				152A11F52A4B4206000A9AEA /* MetricRhythmAppApp.swift */,
-				152A11F72A4B4206000A9AEA /* ContentView.swift */,
+				1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */,
+				1568247F2A742178008B4471 /* MainTabView.swift */,
+				156824832A742181008B4471 /* MeterView.swift */,
+				156824812A742181008B4471 /* PatternButtonStyle.swift */,
+				156824852A742181008B4471 /* PatternButtonView.swift */,
+				156824822A742181008B4471 /* PatternButtonConfig.swift */,
 				152A11F92A4B4207000A9AEA /* Assets.xcassets */,
 				152A11FB2A4B4207000A9AEA /* Preview Content */,
 			);
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				152A11F82A4B4206000A9AEA /* ContentView.swift in Sources */,
-				152A11F62A4B4206000A9AEA /* MetricRhythmAppApp.swift in Sources */,
+				156824872A742181008B4471 /* PatternButtonConfig.swift in Sources */,
+				1568248E2A742289008B4471 /* MetricRhythmAppApp.swift in Sources */,
+				156824882A742181008B4471 /* MeterView.swift in Sources */,
+				156824862A742181008B4471 /* PatternButtonStyle.swift in Sources */,
+				156824802A742178008B4471 /* MainTabView.swift in Sources */,
+				1568248A2A742181008B4471 /* PatternButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
