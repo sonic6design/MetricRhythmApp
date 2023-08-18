@@ -18,7 +18,7 @@ struct PatternButtonView: View {
                                         
 struct PatternButtonView_Previews: PreviewProvider {
             static var previews: some View {
-                PatternButtonView(config: PatternButtonConfig(color: .cyan, text: "binary", textColor: .white)
+                PatternButtonView(config: PatternButtonConfig(color: .cyan, text: "straight", textColor: .white)
             )}
         }
 }

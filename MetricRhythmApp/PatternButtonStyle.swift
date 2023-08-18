@@ -13,11 +13,11 @@ struct PatternButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
-            .padding(10)
+            .padding(20)
             .background(config.color)
             .foregroundColor(config.textColor)
             .patternButtonBorder()
-            .cornerRadius(10)
+            .cornerRadius(5)
     }
     }
 struct BorderModifier: ViewModifier {

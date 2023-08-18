@@ -15,6 +15,9 @@
 		156824882A742181008B4471 /* MeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824832A742181008B4471 /* MeterView.swift */; };
 		1568248A2A742181008B4471 /* PatternButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824852A742181008B4471 /* PatternButtonView.swift */; };
 		1568248E2A742289008B4471 /* MetricRhythmAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */; };
+		1571C76F2A8170C20080F031 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571C76E2A8170C20080F031 /* VideoPlayerView.swift */; };
+		1571C7722A8171480080F031 /* AZVideoPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 1571C7712A8171480080F031 /* AZVideoPlayer */; };
+		1571C7742A81777D0080F031 /* DanielPink.1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1571C7732A8172410080F031 /* DanielPink.1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,8 @@
 		156824832A742181008B4471 /* MeterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterView.swift; sourceTree = "<group>"; };
 		156824852A742181008B4471 /* PatternButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternButtonView.swift; sourceTree = "<group>"; };
 		1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricRhythmAppApp.swift; sourceTree = "<group>"; };
+		1571C76E2A8170C20080F031 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		1571C7732A8172410080F031 /* DanielPink.1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DanielPink.1.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1571C7722A8171480080F031 /* AZVideoPlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +68,12 @@
 				1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */,
 				1568247F2A742178008B4471 /* MainTabView.swift */,
 				156824832A742181008B4471 /* MeterView.swift */,
+				1571C76E2A8170C20080F031 /* VideoPlayerView.swift */,
 				156824812A742181008B4471 /* PatternButtonStyle.swift */,
 				156824852A742181008B4471 /* PatternButtonView.swift */,
 				156824822A742181008B4471 /* PatternButtonConfig.swift */,
 				152A11F92A4B4207000A9AEA /* Assets.xcassets */,
+				1571C7732A8172410080F031 /* DanielPink.1.mp4 */,
 				152A11FB2A4B4207000A9AEA /* Preview Content */,
 			);
 			path = MetricRhythmApp;
@@ -95,6 +103,9 @@
 			dependencies = (
 			);
 			name = MetricRhythmApp;
+			packageProductDependencies = (
+				1571C7712A8171480080F031 /* AZVideoPlayer */,
+			);
 			productName = MetricRhythmApp;
 			productReference = 152A11F22A4B4206000A9AEA /* MetricRhythmApp.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +134,9 @@
 				Base,
 			);
 			mainGroup = 152A11E92A4B4206000A9AEA;
+			packageReferences = (
+				1571C7702A8171480080F031 /* XCRemoteSwiftPackageReference "AZVideoPlayer" */,
+			);
 			productRefGroup = 152A11F32A4B4206000A9AEA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1571C7742A81777D0080F031 /* DanielPink.1.mp4 in Resources */,
 				152A11FD2A4B4207000A9AEA /* Preview Assets.xcassets in Resources */,
 				152A11FA2A4B4207000A9AEA /* Assets.xcassets in Resources */,
 			);
@@ -155,6 +170,7 @@
 				156824862A742181008B4471 /* PatternButtonStyle.swift in Sources */,
 				156824802A742178008B4471 /* MainTabView.swift in Sources */,
 				1568248A2A742181008B4471 /* PatternButtonView.swift in Sources */,
+				1571C76F2A8170C20080F031 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1571C7702A8171480080F031 /* XCRemoteSwiftPackageReference "AZVideoPlayer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamzarn/AZVideoPlayer/";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1571C7712A8171480080F031 /* AZVideoPlayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1571C7702A8171480080F031 /* XCRemoteSwiftPackageReference "AZVideoPlayer" */;
+			productName = AZVideoPlayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 152A11EA2A4B4206000A9AEA /* Project object */;
 }
