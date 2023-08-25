@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150CF9232A990BE300C3DAD3 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150CF9222A990BE300C3DAD3 /* AudioPlayerManager.swift */; };
 		152A11FA2A4B4207000A9AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152A11F92A4B4207000A9AEA /* Assets.xcassets */; };
 		152A11FD2A4B4207000A9AEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152A11FC2A4B4207000A9AEA /* Preview Assets.xcassets */; };
 		156824802A742178008B4471 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568247F2A742178008B4471 /* MainTabView.swift */; };
@@ -18,9 +19,11 @@
 		1571C76F2A8170C20080F031 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571C76E2A8170C20080F031 /* VideoPlayerView.swift */; };
 		1571C7722A8171480080F031 /* AZVideoPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 1571C7712A8171480080F031 /* AZVideoPlayer */; };
 		1571C7742A81777D0080F031 /* DanielPink.1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1571C7732A8172410080F031 /* DanielPink.1.mp4 */; };
+		159970952A97F5C200EFABE4 /* PatternDemo.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 159970942A97F5C200EFABE4 /* PatternDemo.aiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150CF9222A990BE300C3DAD3 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 		152A11F22A4B4206000A9AEA /* MetricRhythmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetricRhythmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		152A11F92A4B4207000A9AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		152A11FC2A4B4207000A9AEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricRhythmAppApp.swift; sourceTree = "<group>"; };
 		1571C76E2A8170C20080F031 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		1571C7732A8172410080F031 /* DanielPink.1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DanielPink.1.mp4; sourceTree = "<group>"; };
+		159970942A97F5C200EFABE4 /* PatternDemo.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = PatternDemo.aiff; path = ../../../ableton/PatternDemo.aiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */,
+				150CF9222A990BE300C3DAD3 /* AudioPlayerManager.swift */,
 				1568247F2A742178008B4471 /* MainTabView.swift */,
 				156824832A742181008B4471 /* MeterView.swift */,
 				1571C76E2A8170C20080F031 /* VideoPlayerView.swift */,
@@ -73,6 +78,7 @@
 				156824852A742181008B4471 /* PatternButtonView.swift */,
 				156824822A742181008B4471 /* PatternButtonConfig.swift */,
 				152A11F92A4B4207000A9AEA /* Assets.xcassets */,
+				159970942A97F5C200EFABE4 /* PatternDemo.aiff */,
 				1571C7732A8172410080F031 /* DanielPink.1.mp4 */,
 				152A11FB2A4B4207000A9AEA /* Preview Content */,
 			);
@@ -154,6 +160,7 @@
 				1571C7742A81777D0080F031 /* DanielPink.1.mp4 in Resources */,
 				152A11FD2A4B4207000A9AEA /* Preview Assets.xcassets in Resources */,
 				152A11FA2A4B4207000A9AEA /* Assets.xcassets in Resources */,
+				159970952A97F5C200EFABE4 /* PatternDemo.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +176,7 @@
 				156824882A742181008B4471 /* MeterView.swift in Sources */,
 				156824862A742181008B4471 /* PatternButtonStyle.swift in Sources */,
 				156824802A742178008B4471 /* MainTabView.swift in Sources */,
+				150CF9232A990BE300C3DAD3 /* AudioPlayerManager.swift in Sources */,
 				1568248A2A742181008B4471 /* PatternButtonView.swift in Sources */,
 				1571C76F2A8170C20080F031 /* VideoPlayerView.swift in Sources */,
 			);

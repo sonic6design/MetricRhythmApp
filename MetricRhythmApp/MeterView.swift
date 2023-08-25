@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AVKit
+
 
 enum Meter {
     case straight
@@ -32,20 +34,31 @@ enum Meter {
     var videoFileName: String {
         switch self {
         case .straight: return "DanielPink.1"
-        case .swing: return "level two"
-        case .combined: return "level three"
-        case .improvise: return "level 4"
+        case .swing: return "DanielPink.1"
+        case .combined: return "DanielPink.1"
+        case .improvise: return "DanielPink.1"
         }
     }
     var videoURL: URL? {
         return Bundle.main.url(forResource: videoFileName, withExtension: "mp4")
     }
+    var buttonConfigs: [PatternButtonConfig] {
+        switch self {
+        case .straight: return [.beginner(audioFile: "PatternDemo"),.moderate(audioFile: ""),.intermediate(),.advanced(),]
+        case .swing: return [.beginner(),.moderate(),.intermediate(),.advanced()]
+        case .combined: return [.beginner(),.moderate(),.intermediate(),.advanced()]
+        case .improvise: return [.beginner(),.moderate(),.intermediate(),.advanced()]
+        }
+        
+    }
+  
 }
 struct MeterView: View {
+    @State var previousButtonConfig:PatternButtonConfig?
     var meter: Meter
     @State var videoPlayerViewIsPresented: Bool = false
     var body: some View {
-        
+
         ZStack {
             Image("sheetMusicEdited 1")
                 .resizable()
@@ -68,11 +81,21 @@ struct MeterView: View {
                 }
             }
             VStack(spacing: 35) {
-                PatternButtonView(config: .init(color: .yellow, text: "straight", textColor: .black))
-                PatternButtonView(config: .init(color: .gray, text: "swing", textColor: .black
-                                               ))
-                PatternButtonView(config: .init(color: .orange, text: "combined", textColor: .black))
-                PatternButtonView(config: .init(color: .teal, text: "immersion", textColor: .black))
+                ForEach(meter.buttonConfigs) { config in
+                    PatternButtonView(action: {
+                        AudioPlayerManager.shared.stopPlayersBesides(currentMeter: meter)
+                        if let audioPlayer = AudioPlayerManager.shared.players[meter]{
+                            audioPlayer.toggle(currentButtonConfig: config, previousButtonConfig: previousButtonConfig)
+                        } else {
+                            guard let url = Bundle.main.url(forResource: config.audioFile, withExtension: "aiff") else { return }
+                            
+                            let audioPlayer = AVPlayer(playerItem: AVPlayerItem(url: url))
+                            AudioPlayerManager.shared.players[meter] = audioPlayer
+                            audioPlayer.toggle(currentButtonConfig: config, previousButtonConfig: previousButtonConfig)
+                        }
+                        previousButtonConfig = config
+                    }, config:config)
+                }
 
             } .padding(.horizontal,75)
         } .sheet(isPresented: $videoPlayerViewIsPresented, content:{ VideoPlayerView(url: meter.videoURL!)})
