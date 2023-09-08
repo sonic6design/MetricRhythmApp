@@ -23,13 +23,57 @@ enum Meter {
         case .improvise: return .teal
         }
     }
-    var titleLabel: String {
-        switch self {
-        case .straight: return "level one"
-        case .swing: return "level two"
-        case .combined: return "level three"
-        case .improvise: return "level 4"
+    func titleLabel(for category: Category) -> String {
+        switch category {
+        case .rhythm:
+            switch self {
+            case .straight: return "binary"
+            case .swing: return "level two"
+            case .combined: return "level three"
+            case .improvise: return "level 4"
+            }
+        case .harmony:
+            switch self {
+            case .straight: return "level one"
+            case .swing: return "level two"
+            case .combined: return "level three"
+            case .improvise: return "level 4"
+            }
+        case .melody:
+            switch self {
+            case .straight: return "level one"
+            case .swing: return "level two"
+            case .combined: return "level three"
+            case .improvise: return "level 4"
+            }
         }
+        
+    }
+    func subTitleLabel(for category: Category) -> String {
+        switch category {
+        case .rhythm:
+            switch self {
+            case .straight: return "one"
+            case .swing: return "level two"
+            case .combined: return "level three"
+            case .improvise: return "level 4"
+            }
+        case .harmony:
+            switch self {
+            case .straight: return "level one"
+            case .swing: return "level two"
+            case .combined: return "level three"
+            case .improvise: return "level 4"
+            }
+        case .melody:
+            switch self {
+            case .straight: return "level one"
+            case .swing: return "level two"
+            case .combined: return "level three"
+            case .improvise: return "level 4"
+            }
+        }
+        
     }
     var videoFileName: String {
         switch self {
@@ -56,6 +100,7 @@ enum Meter {
 struct MeterView: View {
     @State var previousButtonConfig:PatternButtonConfig?
     var meter: Meter
+    @Binding var category: Category
     @State var videoPlayerViewIsPresented: Bool = false
     var body: some View {
 
@@ -66,9 +111,9 @@ struct MeterView: View {
                 .opacity(0.3)
             HStack(alignment: .top) {
                 VStack {
-                    Text(meter.titleLabel)
-                        .padding(.top,75)
-                    Text(meter.titleLabel)
+                    Text(meter.titleLabel(for: category))
+                        .padding(.top,140)
+                    Text(meter.subTitleLabel(for: category))
                         .padding(.top,10)
                    Spacer()
                     Button(action: {videoPlayerViewIsPresented = true}, label: {Image(systemName: "play.fill")
@@ -103,7 +148,7 @@ struct MeterView: View {
 }
 struct MeterView_Previews: PreviewProvider {
     static var previews: some View {
-        MeterView(meter: .straight, videoPlayerViewIsPresented: false)
+        MeterView(meter: .straight,category: .constant(.rhythm), videoPlayerViewIsPresented: false)
     
     }
 }
