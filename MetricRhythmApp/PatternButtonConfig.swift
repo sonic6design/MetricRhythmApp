@@ -15,21 +15,20 @@ struct PatternButtonConfig: Identifiable,Equatable  {
     var textColor: Color
     var audioFile: String
     
-    static func beginner(audioFile:String = "PatternDemo") -> PatternButtonConfig {
-        
-        return PatternButtonConfig(color: .yellow, text: "beginner", textColor: .black, audioFile: audioFile)
+    static func beginner(audioFile:String = "PatternDemo",color: Color = .yellow) -> PatternButtonConfig {
+        return PatternButtonConfig(color: color, text: "beginner", textColor: .black, audioFile: audioFile)
     }
-    static func moderate(audioFile:String = "PatternDemo") -> PatternButtonConfig {
-        
-        return PatternButtonConfig(color: .gray, text: "moderate", textColor: .black,audioFile: audioFile)
+    
+    static func moderate(audioFile:String = "PatternDemo",color: Color = .gray) -> PatternButtonConfig {
+        return PatternButtonConfig(color: color, text: "moderate", textColor: .black,audioFile: audioFile)
     }
-    static func intermediate(audioFile:String = "PatternDemo") -> PatternButtonConfig {
-        
-        return PatternButtonConfig(color: .orange, text: "intermediate", textColor: .black,audioFile: audioFile)
+    
+    static func intermediate(audioFile:String = "PatternDemo",color: Color = .orange) -> PatternButtonConfig {
+        return PatternButtonConfig(color: color, text: "intermediate", textColor: .black,audioFile: audioFile)
     }
-    static func advanced(audioFile:String = "PatternDemo") -> PatternButtonConfig {
-        
-        return PatternButtonConfig(color: .cyan, text: "advanced", textColor: .black,audioFile: audioFile)
+    
+    static func advanced(audioFile:String = "PatternDemo",color: Color = .cyan) -> PatternButtonConfig {
+        return PatternButtonConfig(color: color, text: "advanced", textColor: .black,audioFile: audioFile)
     }
 }
 

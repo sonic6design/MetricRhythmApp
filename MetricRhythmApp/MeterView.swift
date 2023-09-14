@@ -27,10 +27,10 @@ enum Meter {
         switch category {
         case .rhythm:
             switch self {
-            case .straight: return "binary"
-            case .swing: return "level two"
-            case .combined: return "level three"
-            case .improvise: return "level 4"
+            case .straight: return "Meter"
+            case .swing: return "Meter"
+            case .combined: return "Meter"
+            case .improvise: return "Meter"
             }
         case .harmony:
             switch self {
@@ -53,10 +53,10 @@ enum Meter {
         switch category {
         case .rhythm:
             switch self {
-            case .straight: return "one"
-            case .swing: return "level two"
-            case .combined: return "level three"
-            case .improvise: return "level 4"
+            case .straight: return "straight"
+            case .swing: return "swing"
+            case .combined: return "combined"
+            case .improvise: return "improvise"
             }
         case .harmony:
             switch self {
@@ -86,12 +86,32 @@ enum Meter {
     var videoURL: URL? {
         return Bundle.main.url(forResource: videoFileName, withExtension: "mp4")
     }
-    var buttonConfigs: [PatternButtonConfig] {
+    func buttonConfigs(category: Category) -> [PatternButtonConfig] {
         switch self {
-        case .straight: return [.beginner(audioFile: "PatternDemo"),.moderate(audioFile: ""),.intermediate(),.advanced(),]
-        case .swing: return [.beginner(),.moderate(),.intermediate(),.advanced()]
-        case .combined: return [.beginner(),.moderate(),.intermediate(),.advanced()]
-        case .improvise: return [.beginner(),.moderate(),.intermediate(),.advanced()]
+        case .straight: return [
+            .beginner(audioFile: "PatternDemo",color: category.beginnerButtonColor),
+            .moderate(audioFile: "",color: category.moderateButtonColor),
+            .intermediate(color: category.intermediateButtonColor),
+            .advanced(color: category.advancedButtonColor)
+        ]
+        case .swing: return [
+            .beginner(color: category.beginnerButtonColor),
+            .moderate(color: category.moderateButtonColor),
+            .intermediate(color: category.intermediateButtonColor),
+            .advanced(color: category.advancedButtonColor)
+        ]
+        case .combined: return [
+            .beginner(color: category.beginnerButtonColor),
+            .moderate(color: category.moderateButtonColor),
+            .intermediate(color: category.intermediateButtonColor),
+            .advanced(color: category.advancedButtonColor)
+        ]
+        case .improvise: return [
+            .beginner(color: category.beginnerButtonColor),
+            .moderate(color: category.moderateButtonColor),
+            .intermediate(color: category.intermediateButtonColor),
+            .advanced(color: category.advancedButtonColor)
+        ]
         }
         
     }
@@ -116,9 +136,9 @@ struct MeterView: View {
                     Text(meter.subTitleLabel(for: category))
                         .padding(.top,10)
                    Spacer()
-                    Button(action: {videoPlayerViewIsPresented = true}, label: {Image(systemName: "play.fill")
+                    Button(action: {videoPlayerViewIsPresented = true}, label: {Image(systemName: "play.circle")
                             .resizable()
-                            .frame(width: 30,height: 30)
+                            .frame(width: 40,height: 40)
                             .foregroundColor(.black)
                     })
                         .padding(.bottom,130)
@@ -126,7 +146,7 @@ struct MeterView: View {
                 }
             }
             VStack(spacing: 35) {
-                ForEach(meter.buttonConfigs) { config in
+                ForEach(meter.buttonConfigs(category: category)) { config in
                     PatternButtonView(action: {
                         AudioPlayerManager.shared.stopPlayersBesides(currentMeter: meter)
                         if let audioPlayer = AudioPlayerManager.shared.players[meter]{
