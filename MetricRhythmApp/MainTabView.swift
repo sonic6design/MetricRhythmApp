@@ -17,8 +17,8 @@ enum Category: String, Identifiable, CaseIterable {
     
     var tabOneConfig: TabConfig {
         switch self {
-        case .rhythm : return TabConfig(icon: "play.circle", label: "straight")
-        case .harmony : return TabConfig(icon: "play.fill", label: "2-5-1")
+        case .rhythm : return TabConfig(icon: "circle", label: "straight")
+        case .harmony : return TabConfig(icon: "play.fill", label: "I-V")
         case .melody : return TabConfig(icon: "circle", label: "steps")
         }
         
@@ -26,8 +26,22 @@ enum Category: String, Identifiable, CaseIterable {
     var tabTwoConfig: TabConfig {
         switch self {
         case .rhythm : return TabConfig(icon: "play.fill", label: "swung")
-        case .harmony : return TabConfig(icon: "play.circle", label: "1-4-5")
-        case .melody : return TabConfig(icon: "circle.play", label: "skips")
+        case .harmony : return TabConfig(icon: "circle", label: "I-IV-V")
+        case .melody : return TabConfig(icon: "circle", label: "skips")
+        }
+    }
+    var tabThreeConfig: TabConfig {
+        switch self {
+        case .rhythm : return TabConfig(icon: "circle", label: "combined")
+        case .harmony : return TabConfig(icon: "circle", label: "ii-V-I")
+        case .melody : return TabConfig(icon: "circle", label: "leaps")
+        }
+    }
+    var tabFourConfig: TabConfig {
+        switch self {
+        case .rhythm : return TabConfig(icon: "play.circle", label: "improvise")
+        case .harmony : return TabConfig(icon: "play.circle", label: "I-vi-ii-V")
+        case .melody : return TabConfig(icon: "play.circle", label: "random")
         }
     }
     var beginnerButtonColor: Color {
@@ -80,10 +94,10 @@ struct MainTabView: View {
                     Label(category.tabTwoConfig.label,systemImage: category.tabTwoConfig.icon)
                 }.id(category).tag(Tab.meter)
                 MeterView(meter: .combined, category: $category).tabItem {
-                    Label("combined",systemImage: "rectangle")
+                    Label(category.tabThreeConfig.label,systemImage: category.tabThreeConfig.icon)
                 }.id(category).tag(Tab.meter)
                 MeterView(meter: .improvise, category: $category).tabItem {
-                    Label("immersion",systemImage: "rectangle.3.group")
+                    Label(category.tabFourConfig.label,systemImage: category.tabFourConfig.icon)
                 }.id(category).tag(Tab.meter)
                 AppendixView().tabItem {
                     Label("appendix",systemImage: "list.bullet")
