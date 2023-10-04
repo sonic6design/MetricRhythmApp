@@ -40,7 +40,7 @@ struct BorderModifier: ViewModifier {
 }
 extension View {
     func patternButtonBorder() -> some View {
-        self.modifier(BorderModifier(color: .black, textColor: .white, cornerRadius: 10, width: 1))
+        self.modifier(BorderModifier(color: .black, textColor: .white, cornerRadius: 2, width: 2))
     }
 }
 

@@ -11,11 +11,11 @@ import AVKit
 class AudioPlayerManager {
     static let shared = AudioPlayerManager()
     
-    var players: [Meter:AVPlayer] = [:]
+    var players: [Tab:AVPlayer] = [:]
     
-    func stopPlayersBesides(currentMeter: Meter) {
-        for  (meter,player) in players {
-            if meter != currentMeter {
+    func stopPlayersBesides(currentTab: Tab) {
+        for  (tab,player) in players {
+            if tab != currentTab {
                 player.pause()
             }
         }

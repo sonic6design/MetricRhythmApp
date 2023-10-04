@@ -13,21 +13,26 @@ struct AppendixView: View {
         
     ]
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(concepts) {concept in
-                    HStack {
-                        Text(concept.name)
-                    Spacer()
-                        Image(systemName: concept.icon)
-                    }.padding()
+        NavigationStack {
+            ScrollView {
+                LazyVStack {
+                    ForEach(concepts) {concept in
+                        HStack {
+                            NavigationLink(concept.name, value: concept)
+                        Spacer()
+                            Image(systemName: concept.icon)
+                        }.padding()
+                    }
                 }
+            } .navigationDestination(for: Concept.self) {concept in
+                Text(concept.name)
             }
         }
+    
     }
 }
 
-struct Concept: Identifiable {
+struct Concept: Identifiable, Hashable {
     var id: String {
         name
     }
