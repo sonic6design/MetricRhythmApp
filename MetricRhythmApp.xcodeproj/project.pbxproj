@@ -13,7 +13,7 @@
 		156824802A742178008B4471 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568247F2A742178008B4471 /* MainTabView.swift */; };
 		156824862A742181008B4471 /* PatternButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824812A742181008B4471 /* PatternButtonStyle.swift */; };
 		156824872A742181008B4471 /* PatternButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824822A742181008B4471 /* PatternButtonConfig.swift */; };
-		156824882A742181008B4471 /* MeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824832A742181008B4471 /* MeterView.swift */; };
+		156824882A742181008B4471 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824832A742181008B4471 /* TabContentView.swift */; };
 		1568248A2A742181008B4471 /* PatternButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156824852A742181008B4471 /* PatternButtonView.swift */; };
 		1568248E2A742289008B4471 /* MetricRhythmAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */; };
 		1570EB692ABA072900559311 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1570EB682ABA072900559311 /* ColorExtension.swift */; };
@@ -33,7 +33,7 @@
 		1568247F2A742178008B4471 /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		156824812A742181008B4471 /* PatternButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternButtonStyle.swift; sourceTree = "<group>"; };
 		156824822A742181008B4471 /* PatternButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternButtonConfig.swift; sourceTree = "<group>"; };
-		156824832A742181008B4471 /* MeterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterView.swift; sourceTree = "<group>"; };
+		156824832A742181008B4471 /* TabContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		156824852A742181008B4471 /* PatternButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternButtonView.swift; sourceTree = "<group>"; };
 		1568248D2A742289008B4471 /* MetricRhythmAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricRhythmAppApp.swift; sourceTree = "<group>"; };
 		1570EB682ABA072900559311 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 				150CF9222A990BE300C3DAD3 /* AudioPlayerManager.swift */,
 				1568247F2A742178008B4471 /* MainTabView.swift */,
 				15DF766D2AAB876A00281588 /* AppendixView.swift */,
-				156824832A742181008B4471 /* MeterView.swift */,
+				156824832A742181008B4471 /* TabContentView.swift */,
 				1570EB682ABA072900559311 /* ColorExtension.swift */,
 				1571C76E2A8170C20080F031 /* VideoPlayerView.swift */,
 				156824812A742181008B4471 /* PatternButtonStyle.swift */,
@@ -182,7 +182,7 @@
 			files = (
 				156824872A742181008B4471 /* PatternButtonConfig.swift in Sources */,
 				1568248E2A742289008B4471 /* MetricRhythmAppApp.swift in Sources */,
-				156824882A742181008B4471 /* MeterView.swift in Sources */,
+				156824882A742181008B4471 /* TabContentView.swift in Sources */,
 				156824862A742181008B4471 /* PatternButtonStyle.swift in Sources */,
 				156824802A742178008B4471 /* MainTabView.swift in Sources */,
 				15C7582F2AB38AB000A2EBC9 /* TabConfig.swift in Sources */,

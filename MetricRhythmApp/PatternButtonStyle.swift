@@ -13,7 +13,7 @@ struct PatternButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
-            .padding(20)
+            .frame(height: UIScreen.main.bounds.height / 15)
             .background(config.color)
             .foregroundColor(config.textColor)
             .patternButtonBorder()

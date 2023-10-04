@@ -229,7 +229,7 @@ enum Tab: String, Identifiable  {
             PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle", textColor: .cyan, audioFile: "PatternDemo"),
             PatternButtonConfig(color: category.moderateButtonColor, icon: "square", textColor: .cyan, audioFile: "PatternDemo"),
             PatternButtonConfig(color: category.moderateButtonColor, icon: "triangle", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "rectangle", textColor: .cyan, audioFile: "PatternDemo")
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "rectangle", textColor: .cyan, audioFile: "PatternDemo"),
         ]
         default: return []
         }

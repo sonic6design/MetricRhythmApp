@@ -31,10 +31,18 @@ struct PatternButtonConfig: Identifiable,Equatable  {
     static func advanced(audioFile:String = "PatternDemo",color: Color = .cyan) -> PatternButtonConfig {
         return PatternButtonConfig(color: color, icon: "aqi.medium", textColor: .black,audioFile: audioFile)
     }
-    init(id: UUID = UUID(), color: Color, text: String? = nil, icon: String? = nil, textColor: Color, audioFile: String) {
+    init(id: UUID = UUID(), color: Color, text: String, textColor: Color, audioFile: String) {
         self.id = id
         self.color = color
         self.text = text
+        self.icon = nil
+        self.textColor = textColor
+        self.audioFile = audioFile
+    }
+    init(id: UUID = UUID(), color: Color, icon: String, textColor: Color, audioFile: String) {
+        self.id = id
+        self.color = color
+        self.text = nil
         self.icon = icon
         self.textColor = textColor
         self.audioFile = audioFile

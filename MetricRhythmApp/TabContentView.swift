@@ -26,26 +26,16 @@ struct TabContentView: View {
         ZStack {
             Image(category.backgroundImage)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .scaledToFill()
+                .clipped()
                 .opacity(0.3)
-            HStack(alignment: .top) {
-                VStack() {
+            VStack(spacing: UIScreen.main.bounds.height / 25) {
+                VStack {
                     Text(tab.titleLabel(for: category)).font(.custom("Futura", size: 20).weight(.bold))
-                        .padding(.top,140)
+         
                     Text(tab.subTitleLabel(for: category)).font(.system(size: 15))
-                        .padding(.top,10)
-                    Spacer()
-                    
-                    Button(action: {videoPlayerViewIsPresented = true}, label: {Image(systemName: "play.circle")
-                            .resizable()
-                            .frame(width: 40,height: 40)
-                            .foregroundColor(.black)
-                    })
-                        .padding(.bottom,170)
-                        
-                }
-            }
-            VStack(spacing: 35) {
+                }.padding(.bottom,20)
+    
                 ForEach(tab.buttonConfigs(category: category)) { config in
                     PatternButtonView(action: {
                         AudioPlayerManager.shared.stopPlayersBesides(currentTab: tab)
@@ -61,9 +51,16 @@ struct TabContentView: View {
                         previousButtonConfig = config
                     }, config:config)
                 }
+                Button(action: {videoPlayerViewIsPresented = true}, label: {Image(systemName: "play.circle")
+                        .resizable()
+                        .frame(width: 40,height: 40)
+                        .foregroundColor(.black)
+                }) .padding(.top,20)
 
-            } .padding(.horizontal,75)
+            } .frame(width: UIScreen.main.bounds.width - 150)
+                
         } .sheet(isPresented: $videoPlayerViewIsPresented, content:{ VideoPlayerView(url: tab.videoURL!)})
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
 }
 struct TabContentView_Previews: PreviewProvider {

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AppendixView: View {
     @State var concepts: [Concept] = [
-        Concept (name: "practice", icon: "person")
+        Concept (name: "practice", icon: "person"),
+        Concept (name: "blah", icon: "circle")
         
     ]
     var body: some View {
@@ -17,20 +18,22 @@ struct AppendixView: View {
             ScrollView {
                 LazyVStack {
                     ForEach(concepts) {concept in
-                        HStack {
-                            NavigationLink(concept.name, value: concept)
-                        Spacer()
-                            Image(systemName: concept.icon)
-                        }.padding()
+                        NavigationLink(destination:  Text(concept.name), label: {
+                            HStack {
+                                Text(concept.name).foregroundColor(.black)
+                                Spacer()
+                                Image(systemName: concept.icon)
+                            }.padding()
+                        })
                     }
                 }
-            } .navigationDestination(for: Concept.self) {concept in
-                Text(concept.name)
-            }
+            }.navigationTitle(Text("appendix"))
+            
         }
-    
     }
+    
 }
+
 
 struct Concept: Identifiable, Hashable {
     var id: String {
