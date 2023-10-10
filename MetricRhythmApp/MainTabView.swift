@@ -13,11 +13,10 @@ enum Category: String, Identifiable, CaseIterable {
     }
     case rhythm = "Rhythm"
     case harmony
-    case melody
+    case melody 
     
     var beginnerButtonColor: Color {
         switch self {
-//            rgb(38, 87, 124) rgb(229, 86, 4) rgb(180, 180, 179) rgb(235, 228, 209)
         case .rhythm : return .rgb(38, 87, 124)
         case .harmony : return .rgb(229, 86, 4)
         case .melody : return .rgb(244, 209, 96)
@@ -54,7 +53,7 @@ enum Category: String, Identifiable, CaseIterable {
     var backgroundImage: String {
         switch self {
         case .rhythm: return "rhythmPagesForApp"
-        case .harmony: return "sheetMusicEdited 1"
+        case .harmony: return "rhythmPagesForApp 1"
         case .melody: return "sheetMusicEdited 1"
         }
     }
@@ -117,30 +116,7 @@ enum Tab: String, Identifiable  {
         
     }
     func subTitleLabel(for category: Category) -> String {
-        switch category {
-        case .rhythm:
-            switch self {
-            case .straight: return "straight"
-            case .swung: return "swung"
-            case .combined: return "combined"
-            default: return "tab name here"
-            }
-        case .harmony:
-            switch self {
-            case .straight: return "Major"
-            case .swung: return "minor"
-            case .combined: return "combined"
-            default: return "tab name here"
-            }
-        case .melody:
-            switch self {
-            case .straight: return "steps"
-            case .swung: return "skips"
-            case .combined: return "leaps"
-            default: return "tab name here"
-            }
-        }
-        
+        return rawValue
     }
     var videoFileName: String {
         switch self {
@@ -170,66 +146,66 @@ enum Tab: String, Identifiable  {
         switch self {
         case .straight: return [
 //            .beginner(audioFile: "PatternDemo",color: category.beginnerButtonColor),
-            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle.fill", textColor: .yellow, audioFile: "PatternDemo"),
 //            .moderate(audioFile: "",color: category.moderateButtonColor),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "square", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "circle.fill", textColor: .yellow, audioFile: "PatternDemo"),
 //            .intermediate(color: category.intermediateButtonColor),
-            PatternButtonConfig(color: category.intermediateButtonColor, icon: "triangle", textColor: .red, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "rectangle", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.intermediateButtonColor, icon: "circle.fill", textColor: .yellow, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "circle.fill", textColor: .yellow, audioFile: "PatternDemo"),
            
 //            .advanced(color: category.advancedButtonColor)
         ]
         case .swung: return [
 //            .beginner(color: category.beginnerButtonColor),
-            PatternButtonConfig(color: category.beginnerButtonColor, icon: "capsule", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle.fill", textColor: .orange, audioFile: "PatternDemo"),
 //            .moderate(color: category.moderateButtonColor),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "oval", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "circle.fill", textColor: .orange, audioFile: "PatternDemo"),
 //            .intermediate(color: category.intermediateButtonColor),
-            PatternButtonConfig(color: category.intermediateButtonColor, icon: "diamond", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.intermediateButtonColor, icon: "circle.fill", textColor: .orange, audioFile: "PatternDemo"),
 //            .advanced(color: category.advancedButtonColor)
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "octagon", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "circle.fill", textColor: .orange, audioFile: "PatternDemo"),
         
         ]
         case .combined: return [
 //            .beginner(color: category.beginnerButtonColor),
-            PatternButtonConfig(color: category.beginnerButtonColor, icon: "hexagon", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle.fill", textColor: .red, audioFile: "PatternDemo"),
 //            .moderate(color: category.moderateButtonColor),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "pentagon", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "circle.fill", textColor: .red, audioFile: "PatternDemo"),
 //            .intermediate(color: category.intermediateButtonColor),
-            PatternButtonConfig(color: category.intermediateButtonColor, icon: "seal", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.intermediateButtonColor, icon: "circle.fill", textColor: .red, audioFile: "PatternDemo"),
 //            .advanced(color: category.advancedButtonColor)
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "rhombus", textColor: .red, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "circle.fill", textColor: .red, audioFile: "PatternDemo"),
     
         ]
         case .major: return [
-            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle", textColor: .yellow, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "square", textColor: .yellow, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.intermediateButtonColor, icon: "triangle", textColor: .yellow, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "rectangle.roundedtop", textColor: .yellow, audioFile: "PatternDemo")
+            PatternButtonConfig(color: category.beginnerButtonColor, icon: "square.fill", textColor: .cyan, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "square.fill", textColor: .cyan, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.intermediateButtonColor, icon: "square.fill", textColor: .cyan, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "square.fill", textColor: .cyan, audioFile: "PatternDemo")
         ]
         case .minor: return [
-            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle", textColor: .yellow, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "square", textColor: .yellow, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "triangle", textColor: .yellow, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "rectangle", textColor: .yellow, audioFile: "PatternDemo")
+            PatternButtonConfig(color: category.beginnerButtonColor, icon: "square.fill", textColor: .mint, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "square.fill", textColor: .mint, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "square.fill", textColor: .mint, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "square.fill", textColor: .mint, audioFile: "PatternDemo")
         ]
         case .steps: return [
-            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "square", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "viewfinder", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "rectangle.roundedbottom", textColor: .cyan, audioFile: "PatternDemo")
+            PatternButtonConfig(color: category.beginnerButtonColor, icon: "seal.fill", textColor: .cyan, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "seal.fill", textColor: .cyan, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "seal.fill", textColor: .cyan, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "seal.fill", textColor: .cyan, audioFile: "PatternDemo")
         ]
         case .skips: return [
-            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "square", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "triangle", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "rectangle", textColor: .cyan, audioFile: "PatternDemo")
+            PatternButtonConfig(color: category.beginnerButtonColor, icon: "seal.fill", textColor: .mint, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "seal.fill", textColor: .mint, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "seal.fill", textColor: .mint, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "seal.fill", textColor: .mint, audioFile: "PatternDemo")
         ]
         case .leaps: return [
-            PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "square", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.moderateButtonColor, icon: "triangle", textColor: .cyan, audioFile: "PatternDemo"),
-            PatternButtonConfig(color: category.advancedButtonColor, icon: "rectangle", textColor: .cyan, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.beginnerButtonColor, icon: "seal.fill", textColor: .blue, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "seal.fill", textColor: .blue, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.moderateButtonColor, icon: "seal.fill", textColor: .blue, audioFile: "PatternDemo"),
+            PatternButtonConfig(color: category.advancedButtonColor, icon: "seal.fill", textColor: .blue, audioFile: "PatternDemo"),
         ]
         default: return []
         }

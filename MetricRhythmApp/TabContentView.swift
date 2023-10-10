@@ -8,14 +8,6 @@
 import SwiftUI
 import AVKit
 
-
-enum Meter {
-    case straight
-    case swing
-    case combined
-    case improvise
-    
-}
 struct TabContentView: View {
     @State var previousButtonConfig:PatternButtonConfig?
     var tab: Tab
@@ -29,12 +21,14 @@ struct TabContentView: View {
                 .scaledToFill()
                 .clipped()
                 .opacity(0.3)
+//                .edgesIgnoringSafeArea([])
             VStack(spacing: UIScreen.main.bounds.height / 25) {
                 VStack {
-                    Text(tab.titleLabel(for: category)).font(.custom("Futura", size: 20).weight(.bold))
+                    Text(tab.titleLabel(for: category)).font(.custom("Futura", size: 25).weight(.heavy))
+                        .padding(5)
          
                     Text(tab.subTitleLabel(for: category)).font(.system(size: 15))
-                }.padding(.bottom,20)
+                }
     
                 ForEach(tab.buttonConfigs(category: category)) { config in
                     PatternButtonView(action: {
@@ -61,6 +55,8 @@ struct TabContentView: View {
                 
         } .sheet(isPresented: $videoPlayerViewIsPresented, content:{ VideoPlayerView(url: tab.videoURL!)})
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+           
+            
     }
 }
 struct TabContentView_Previews: PreviewProvider {

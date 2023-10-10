@@ -23,6 +23,7 @@
 		159970952A97F5C200EFABE4 /* PatternDemo.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 159970942A97F5C200EFABE4 /* PatternDemo.aiff */; };
 		15C7582F2AB38AB000A2EBC9 /* TabConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7582E2AB38AB000A2EBC9 /* TabConfig.swift */; };
 		15DF766E2AAB876A00281588 /* AppendixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF766D2AAB876A00281588 /* AppendixView.swift */; };
+		15FC3FE92AD5B29300613E43 /* ConceptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC3FE82AD5B29300613E43 /* ConceptView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		159970942A97F5C200EFABE4 /* PatternDemo.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = PatternDemo.aiff; path = ../../../ableton/PatternDemo.aiff; sourceTree = "<group>"; };
 		15C7582E2AB38AB000A2EBC9 /* TabConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabConfig.swift; sourceTree = "<group>"; };
 		15DF766D2AAB876A00281588 /* AppendixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendixView.swift; sourceTree = "<group>"; };
+		15FC3FE82AD5B29300613E43 /* ConceptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				150CF9222A990BE300C3DAD3 /* AudioPlayerManager.swift */,
 				1568247F2A742178008B4471 /* MainTabView.swift */,
 				15DF766D2AAB876A00281588 /* AppendixView.swift */,
+				15FC3FE82AD5B29300613E43 /* ConceptView.swift */,
 				156824832A742181008B4471 /* TabContentView.swift */,
 				1570EB682ABA072900559311 /* ColorExtension.swift */,
 				1571C76E2A8170C20080F031 /* VideoPlayerView.swift */,
@@ -187,6 +190,7 @@
 				156824802A742178008B4471 /* MainTabView.swift in Sources */,
 				15C7582F2AB38AB000A2EBC9 /* TabConfig.swift in Sources */,
 				150CF9232A990BE300C3DAD3 /* AudioPlayerManager.swift in Sources */,
+				15FC3FE92AD5B29300613E43 /* ConceptView.swift in Sources */,
 				1568248A2A742181008B4471 /* PatternButtonView.swift in Sources */,
 				15DF766E2AAB876A00281588 /* AppendixView.swift in Sources */,
 				1570EB692ABA072900559311 /* ColorExtension.swift in Sources */,
