@@ -17,6 +17,7 @@ struct PatternButtonView: View {
         .buttonStyle(PatternButtonStyle(config: config))
     }
 }
+
 struct PatternButtonViewLabel: View {
     var config: PatternButtonConfig
     var body: some View {

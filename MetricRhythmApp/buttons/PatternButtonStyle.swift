@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PatternButtonStyle: ButtonStyle {
     var config: PatternButtonConfig
-
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
@@ -19,7 +19,9 @@ struct PatternButtonStyle: ButtonStyle {
             .patternButtonBorder()
             .cornerRadius(5)
     }
-    }
+}
+
+
 struct BorderModifier: ViewModifier {
     var color: Color
     var textColor: Color
@@ -28,7 +30,7 @@ struct BorderModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-//            .padding()
+        //            .padding()
             .background(color)
             .foregroundColor(textColor)
             .cornerRadius(cornerRadius)

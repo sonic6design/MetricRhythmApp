@@ -18,10 +18,10 @@ struct TabContentView: View {
         ZStack {
             Image(category.backgroundImage)
                 .resizable()
-                .scaledToFill()
                 .clipped()
-                .opacity(0.3)
-//                .edgesIgnoringSafeArea([])
+                .scaledToFill()
+                .opacity(0.2)
+                .edgesIgnoringSafeArea([])
             VStack(spacing: UIScreen.main.bounds.height / 25) {
                 VStack {
                     Text(tab.titleLabel(for: category)).font(.custom("Futura", size: 25).weight(.heavy))

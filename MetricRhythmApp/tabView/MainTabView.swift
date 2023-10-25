@@ -11,7 +11,8 @@ enum Category: String, Identifiable, CaseIterable {
     var id: String {
         rawValue
     }
-    case rhythm = "Rhythm"
+//    Removed this string ("Rhythm") from case rhythm 10.24.23
+    case rhythm
     case harmony
     case melody 
     
@@ -52,8 +53,8 @@ enum Category: String, Identifiable, CaseIterable {
     }
     var backgroundImage: String {
         switch self {
-        case .rhythm: return "rhythmPagesForApp"
-        case .harmony: return "rhythmPagesForApp 1"
+        case .rhythm: return "rhythmBackground"
+        case .harmony: return "rhythmBackground"
         case .melody: return "sheetMusicEdited 1"
         }
     }
@@ -145,35 +146,23 @@ enum Tab: String, Identifiable  {
     func buttonConfigs(category: Category) -> [PatternButtonConfig] {
         switch self {
         case .straight: return [
-//            .beginner(audioFile: "PatternDemo",color: category.beginnerButtonColor),
             PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle.fill", textColor: .yellow, audioFile: "PatternDemo"),
-//            .moderate(audioFile: "",color: category.moderateButtonColor),
             PatternButtonConfig(color: category.moderateButtonColor, icon: "circle.fill", textColor: .yellow, audioFile: "PatternDemo"),
-//            .intermediate(color: category.intermediateButtonColor),
             PatternButtonConfig(color: category.intermediateButtonColor, icon: "circle.fill", textColor: .yellow, audioFile: "PatternDemo"),
             PatternButtonConfig(color: category.advancedButtonColor, icon: "circle.fill", textColor: .yellow, audioFile: "PatternDemo"),
            
-//            .advanced(color: category.advancedButtonColor)
         ]
         case .swung: return [
-//            .beginner(color: category.beginnerButtonColor),
             PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle.fill", textColor: .orange, audioFile: "PatternDemo"),
-//            .moderate(color: category.moderateButtonColor),
             PatternButtonConfig(color: category.moderateButtonColor, icon: "circle.fill", textColor: .orange, audioFile: "PatternDemo"),
-//            .intermediate(color: category.intermediateButtonColor),
             PatternButtonConfig(color: category.intermediateButtonColor, icon: "circle.fill", textColor: .orange, audioFile: "PatternDemo"),
-//            .advanced(color: category.advancedButtonColor)
             PatternButtonConfig(color: category.advancedButtonColor, icon: "circle.fill", textColor: .orange, audioFile: "PatternDemo"),
         
         ]
         case .combined: return [
-//            .beginner(color: category.beginnerButtonColor),
             PatternButtonConfig(color: category.beginnerButtonColor, icon: "circle.fill", textColor: .red, audioFile: "PatternDemo"),
-//            .moderate(color: category.moderateButtonColor),
             PatternButtonConfig(color: category.moderateButtonColor, icon: "circle.fill", textColor: .red, audioFile: "PatternDemo"),
-//            .intermediate(color: category.intermediateButtonColor),
             PatternButtonConfig(color: category.intermediateButtonColor, icon: "circle.fill", textColor: .red, audioFile: "PatternDemo"),
-//            .advanced(color: category.advancedButtonColor)
             PatternButtonConfig(color: category.advancedButtonColor, icon: "circle.fill", textColor: .red, audioFile: "PatternDemo"),
     
         ]
@@ -209,11 +198,8 @@ enum Tab: String, Identifiable  {
         ]
         default: return []
         }
-        
     }
-
 }
-
 struct MainTabView: View {
     @State var category: Category = .rhythm
     @State var tab: Tab = .straight
@@ -240,10 +226,6 @@ struct MainTabView: View {
         }
     }
 }
-
-
-
-
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()

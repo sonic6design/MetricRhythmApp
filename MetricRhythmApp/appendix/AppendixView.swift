@@ -10,12 +10,11 @@ import AVKit
 
 struct AppendixView: View {
     @State var concepts: [Concept] = [
-        Concept (name: "listen", icon: "circle.fill"),
-        Concept (name: "imagine", icon: "square.fill"),
-        Concept(name: "imitate", icon: "hexagon.fill"),
-        Concept (name: "respond", icon: "rectangle.fill"),
-        Concept (name: "mood", icon: "octagon.fill"),
-        Concept (name: "movement", icon: "seal.fill")
+        Concept (name: "listen", icon: "circle.fill",description: "lsd"),
+        Concept (name: "imagine", icon: "square.fill",description: "bla"),
+        Concept(name: "imitate", icon: "hexagon.fill",description: "blas"),
+        Concept (name: "respond", icon: "rectangle.fill", description: "blah"),
+        
         
     ]
     var body: some View {
@@ -23,7 +22,7 @@ struct AppendixView: View {
             ScrollView {
                 LazyVStack {
                     ForEach(concepts) {concept in
-                        NavigationLink(destination:  ConceptView(concept: concept), label: {
+                        NavigationLink(destination:  ConceptView(concept: concept),  label: {
                             HStack {
                                 Text(concept.name).foregroundColor(.black)
                                 Spacer()
@@ -46,6 +45,8 @@ struct Concept: Identifiable, Hashable {
     }
     var name: String
     var icon: String
+    var description: String
+    
     var videoURL: URL? = Bundle.main.url(forResource: "DanielPink.1", withExtension: "mp4")
     var player: AVPlayer? {
         guard let url = videoURL else {
