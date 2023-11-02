@@ -14,7 +14,7 @@ struct TabContentView: View {
     @Binding var category: Category
     @State var videoPlayerViewIsPresented: Bool = false
     var body: some View {
-
+        
         ZStack {
             Image(category.backgroundImage)
                 .resizable()
@@ -24,12 +24,13 @@ struct TabContentView: View {
                 .edgesIgnoringSafeArea([])
             VStack(spacing: UIScreen.main.bounds.height / 25) {
                 VStack {
-                    Text(tab.titleLabel(for: category)).font(.custom("Futura", size: 25).weight(.heavy))
+                    Text(tab.titleLabel(for: category))
+                        .font(.custom("Futura", size: 25).weight(.heavy))
                         .padding(5)
-         
+                    
                     Text(tab.subTitleLabel(for: category)).font(.system(size: 15))
                 }
-    
+                
                 ForEach(tab.buttonConfigs(category: category)) { config in
                     PatternButtonView(action: {
                         AudioPlayerManager.shared.stopPlayersBesides(currentTab: tab)
@@ -50,18 +51,18 @@ struct TabContentView: View {
                         .frame(width: 40,height: 40)
                         .foregroundColor(.black)
                 }) .padding(.top,20)
-
-            } .frame(width: UIScreen.main.bounds.width - 150)
                 
+            } .frame(width: UIScreen.main.bounds.width - 150)
+            
         } .sheet(isPresented: $videoPlayerViewIsPresented, content:{ VideoPlayerView(url: tab.videoURL!)})
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-           
-            
+        
+        
     }
 }
 struct TabContentView_Previews: PreviewProvider {
     static var previews: some View {
         TabContentView(tab: .straight,category: .constant(.rhythm), videoPlayerViewIsPresented: false)
-    
+        
     }
 }

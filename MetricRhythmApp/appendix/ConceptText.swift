@@ -23,7 +23,7 @@ enum ConceptText: String, Identifiable, CaseIterable {
         switch self {
         case .listen : return "Listening is the foundation of all musical understanding"
         case .imagine : return "Our imagination absorbs the sounds of music through active listening"
-        case .imitate : return "Imitating musical sounds builds our vocabulary of musical patterns and phrases"
+        case .imitate : return "Imitating musical sounds builds our vocabulary of musical patterns and phrases or We develop our musical vocabulary by imiating musical sounds"
         case .respond : return "Experimenting with our own response to musical sounds develops our ability to communicate with our musical vocabulary. "
         default: return "error"
         }

@@ -53,8 +53,8 @@ enum Category: String, Identifiable, CaseIterable {
     }
     var backgroundImage: String {
         switch self {
-        case .rhythm: return "rhythmBackground"
-        case .harmony: return "rhythmBackground"
+        case .rhythm: return "sheetMusicEdited 1"
+        case .harmony: return "sheetMusicEdited 1"
         case .melody: return "sheetMusicEdited 1"
         }
     }
@@ -124,7 +124,14 @@ enum Tab: String, Identifiable  {
         case .straight: return "DanielPink.1"
         case .swung: return "DanielPink.1"
         case .combined: return "DanielPink.1"
-        default: return "Harmony"
+        case .improvise: return "DanielPink.1"
+        case .major: return "DanielPink.1"
+        case .minor: return "DanielPink.1"
+        case .combinedHarmony:return "DanielPink.1"
+        case .steps: return "DanielPink.1"
+        case .skips: return "DanielPink.1"
+        case .leaps: return "DanielPink.1"
+        case .appendix:  return "DanielPink.1"
         }
     }
     var videoURL: URL? {
